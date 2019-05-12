@@ -71,5 +71,37 @@
                 <asp:BoundField DataField="Rasa" HeaderText="Rasa" SortExpression="Rasa" />
             </Columns>
         </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Tabela_Naszych_Psow] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Tabela_Naszych_Psow] ([Nazwa_sluzby], [Wzrost - cm], [Waga - kg], [Rok_zalozenia], [Rasa]) VALUES (@Imię_Psa, @column1, @column2, @Rok_zalozenia, @Rasa)" SelectCommand="SELECT * FROM [Tabela_Naszych_Psow]" UpdateCommand="UPDATE [Tabela_Naszych_Psow] SET [Imię Psa] = @Imię_Psa, [Wzrost - cm] = @column1, [Waga - kg] = @column2, [Data urodzenia] = @Data_urodzenia, [Rasa] = @Rasa WHERE [Id] = @Id">
+            <DeleteParameters>
+                <asp:Parameter Name="Id" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="Nazwa_sluzby" Type="String" />
+                <asp:Parameter Name="column1" Type="Decimal" />
+                <asp:Parameter Name="column2" Type="Decimal" />
+                <asp:Parameter DbType="Rok_zalozenia" Name="Data_urodzenia" />
+                <asp:Parameter Name="Rasa" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="Nazwa_sluzby" Type="String" />
+                <asp:Parameter Name="column1" Type="Decimal" />
+                <asp:Parameter Name="column2" Type="Decimal" />
+                <asp:Parameter DbType="Rok_zalozenia" Name="Data_urodzenia" />
+                <asp:Parameter Name="Rasa" Type="String" />
+                <asp:Parameter Name="Id" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource2">
+            <Columns>
+                <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+                <asp:BoundField DataField="Imię Psa" HeaderText="Imię Psa" SortExpression="Imię Psa" />
+                <asp:BoundField DataField="Wzrost - cm" HeaderText="Wzrost - cm" SortExpression="Wzrost - cm" />
+                <asp:BoundField DataField="Waga - kg" HeaderText="Waga - kg" SortExpression="Waga - kg" />
+                <asp:BoundField DataField="Data urodzenia" HeaderText="Data urodzenia" SortExpression="Data urodzenia" />
+                <asp:BoundField DataField="Rasa" HeaderText="Rasa" SortExpression="Rasa" />
+            </Columns>
+        </asp:GridView>
+        
+
     </p>
 </asp:Content>
