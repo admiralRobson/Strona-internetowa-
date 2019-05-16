@@ -8,7 +8,7 @@
 </p>
 <br style="text-align:left;text-justify;margin-top:15px">
     
-    Na stronie opisałem moim zdaniem służby krajów, które mają najlepsze służby.<br>
-    Są to Federacja Rosyjska, USA oraz Izrael.
+    Strona internetowa przedstawia najlepsze służby specjalne na świecie.<br>
+    Krajami z najlepszymi służbami specjalnymi są Federacja Rosyjska, USA oraz Izrael.
 </p>
 </asp:Content>
